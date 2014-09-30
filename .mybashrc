@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# call alias file
-if [ -f .mybash_aliases ]; then
-   . .mybash_aliases
-fi
+# aliases
+alias ll='ls -lA'
+alias l='ls -CA'

@@ -1,4 +1,0 @@
-#~/bin/bash
-
-alias ll='ls -lAF --color=auto'
-alias l='ls -CFA --color=auto'
