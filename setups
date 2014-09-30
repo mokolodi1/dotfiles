@@ -1,0 +1,8 @@
+# Run tf_conf/.mybashrc
+
+if [ -f ~/tf_conf/.mybashrc ]; then
+    . ~/tf_conf/.mybashrc
+fi
+
+;; load ~/tf_conf/.myemacs
+(load "~/tf_conf/.myemacs")
