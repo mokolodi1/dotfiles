@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# call alias file
+if [ -f .mybash_aliases ]; then
+   . .mybash_aliases
+fi

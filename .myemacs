@@ -1,0 +1,82 @@
+;; This is a file that I call from my handy dandy .emacs file. 
+
+; simple
+(setq column-number-mode t)
+(setq line-number-mode t)
+(scroll-bar-mode -1)			; no scroll bar
+(tool-bar-mode -1)			; no tool bar
+(menu-bar-mode -1)			; no menu bar
+
+; typing out yes and no
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+; typing
+(setq echo-keystrokes 0.1)		; quick keystrokes
+(setq visible-bell t)			; non-sound bell
+(show-paren-mode t)			; highlight parenthesis
+(setq show-paren-style 'parethesis)	; highlihght just parenthesis
+(setq dabbrev-case-replace nil)		; case preserved when expanding
+
+(set-keyboard-coding-system nil)	; for using a Mac
+
+; modes
+(add-hook 'lisp-mode-hook 		; CLISP
+	  (lambda ()
+	    (auto-fill-mode)
+	    (set-fill-column 80)
+	    (set (make-local-variable 'lisp-indent-function)
+		 'common-lisp-indent-function) ; not dumb indentation
+	    (set-lisp-comments)))
+
+(add-hook 'emacs-lisp-mode-hook		; EMACS LISP
+	  (lambda ()
+	    (auto-fill-mode)
+	    (set-fill-column 80)
+	    (set-lisp-comments)))
+
+(add-hook 'c-mode-common-hook		; C-like languages
+	  (lambda ()
+	    (auto-fill-mode 80)
+	    (setq comment-start   "/* "	; comments
+		  comment-end     " */"
+		  c-default-style "linux" ; linux-style indetnation
+		  tab-stop-list (number-sequence 4 120 4) ; 4-space tabs
+		  c-tab-always-indent nil
+		  indent-tabs-mode t)))
+
+; disable autosave
+(setq auto-save-default nil)		; autosave
+(setq backup-inhibited t)		; backup
+
+; keybindings
+(global-set-key (kbd "RET") 'newline-and-indent) ; indent after new line insert
+(global-set-key (kbd "C-c <left>") 'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>") 'windmove-up)
+(global-set-key (kbd "C-c <down>") 'windmove-down)
+
+(defun set-lisp-comments ()		; lisp comments
+  (setq comment-start "; "
+	comment-end ""))
+
+(defun insert-space-or-newline-and-indent ()
+  (interactive)
+  (if (>= (current-column) fill-column)
+      (newline-and-indent)
+    (insert-char ? )))
+
+
+;; Enable mouse support
+(unless window-system
+  (require 'mouse)
+  (xterm-mouse-mode t)
+  (global-set-key [mouse-4] '(lambda ()
+			       (interactive)
+			       (scroll-down
+				1)))
+  (global-set-key [mouse-5] '(lambda ()
+			       (interactive)
+			       (scroll-up
+				1)))
+  (defun track-mouse (e))
+  (setq mouse-sel-mode t))
