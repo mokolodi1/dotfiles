@@ -3,20 +3,15 @@
 ; simple
 (setq column-number-mode t)
 (setq line-number-mode t)
-(scroll-bar-mode -1)			; no scroll bar
-(tool-bar-mode -1)			; no tool bar
-(menu-bar-mode -1)			; no menu bar
 
-; typing out yes and no
-(defalias 'yes-or-no-p 'y-or-n-p)
+;; general settings
+(setq visible-bell t)			; non-sound bell
+(defalias 'yes-or-no-p 'y-or-n-p)	; typing out yes and no
 
 ; typing
-(setq echo-keystrokes 0.1)		; quick keystrokes
-(setq visible-bell t)			; non-sound bell
 (show-paren-mode t)			; highlight parenthesis
 (setq show-paren-style 'parethesis)	; highlihght just parenthesis
-(setq dabbrev-case-replace nil)		; case preserved when expanding
-
+(setq echo-keystrokes 0.1)		; quick keystrokes
 (set-keyboard-coding-system nil)	; for using a Mac
 
 ; modes
