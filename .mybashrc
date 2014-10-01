@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#todo: add PS1 settings for bash
+
 # aliases
 alias ll='ls -lA'
 alias l='ls -CA'
