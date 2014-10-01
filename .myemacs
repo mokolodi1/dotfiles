@@ -3,6 +3,7 @@
 ; simple
 (setq column-number-mode t)
 (setq line-number-mode t)
+(global-set-key (kbd "DEL") 'backward-delete-char)
 
 ;; general settings
 (setq ring-bell-function 'ignore)	; non-sound bell
@@ -32,12 +33,12 @@
 (add-hook 'c-mode-common-hook		; C-like languages
 	  (lambda ()
 	    (auto-fill-mode 80)
-	    (setq comment-start   "/* "	; comments
-		  comment-end     " */"
-		  c-default-style "linux" ; linux-style indetnation
-		  tab-stop-list (number-sequence 4 120 4) ; 4-space tabs
+	    (setq c-basic-offset 4
+		  indent-tabs-mode t
+		  c-backspace-function 'backward-delete-char
 		  c-tab-always-indent nil
-		  indent-tabs-mode t)))
+		  tab-width 4)
+	    (c-set-offset 'substatement-open 0)))
 
 ; disable autosave
 (setq auto-save-default nil)		; autosave
