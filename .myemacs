@@ -42,25 +42,25 @@
 	    ;; indentation of openning { in blocks
 	    (c-set-offset 'substatement-open 0)
 	    ;; uncommenting a region
-	    (local-set-key (kbd "C-c C-u") 'uncomment-region)))
-
-;; hide show minor mode
-(hs-minor-mode t)
-(global-set-key (kbd "C-c C-s") 'hs-show-block)
-(global-set-key (kbd "C-c C-b") 'hs-hide-block)
-(global-set-key (kbd "C-c C-M-s") 'hs-show-all)
-(global-set-key (kbd "C-c C-M-b") 'hs-hide-all)
+	    (local-set-key (kbd "C-c C-u") 'uncomment-region)
+	    ;; hide show
+	    (hs-minor-mode t)
+	    (define-key c-mode-map (kbd "C-c C-s") 'hs-show-block)
+	    (define-key c-mode-map (kbd "C-c C-b") 'hs-hide-block)
+	    (define-key c-mode-map (kbd "C-c C-M-s") 'hs-show-all)
+	    (define-key c-mode-map (kbd "C-c C-M-b") 'hs-hide-all)))
 
 ; disable autosave
 (setq auto-save-default nil)		; autosave
 (setq backup-inhibited t)		; backup
 
 ; keybindings
-(global-set-key (kbd "RET") 'newline-and-indent) ; indent after new line insert
+(global-set-key (kbd "RET") 'newline-and-indent) ; indent after new line
 (global-set-key (kbd "C-c <left>") 'windmove-left)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
+(global-set-key (kbd "M-s") 'save-buffer)
 
 (defun set-lisp-comments ()		; lisp comments
   (setq comment-start "; "
