@@ -61,6 +61,8 @@
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
 (global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-n") 'next-line)
+(global-set-key (kbd "M-p") 'previous-line)
 
 (defun set-lisp-comments ()		; lisp comments
   (setq comment-start "; "
