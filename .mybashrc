@@ -14,3 +14,4 @@ PS1+='\$ '
 alias ll='ls -lA'
 alias l='ls -CA'
 alias gccw="gcc -Werror -Wextra -Wall -o a"
+alias clean="find ~ -name \".DS_Store\" -depth -exec rm {} \;"
