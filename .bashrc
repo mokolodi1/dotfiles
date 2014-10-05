@@ -15,3 +15,4 @@ alias ll='ls -lA'
 alias l='ls -CA'
 alias gccw="gcc -Werror -Wextra -Wall -o a"
 alias clean="find ~ -name \".DS_Store\" -depth -exec rm {} \;"
+alias emacs='/usr/local/Cellar/emacs/24.3/bin/emacs'

@@ -1,21 +1,46 @@
-;; This is a file that I call from my handy dandy .emacs file. 
+;;; This is a file that I call from my handy dandy .emacs file. 
 
-; simple
+;;http://www.emacswiki.org/emacs/EmacsCrashCode
+
+; simple modes
 (setq column-number-mode t)
 (setq line-number-mode t)
-(global-set-key (kbd "DEL") 'backward-delete-char)
+(menu-bar-mode -1)
 
 ;; general settings
-(setq ring-bell-function 'ignore)	; non-sound bell
-(defalias 'yes-or-no-p 'y-or-n-p)	; typing out yes and no
+(setq ring-bell-function 'ignore)
+(defalias 'yes-or-no-p 'y-or-n-p)
+(setq undo-limit 100000)
+
+;; For undoing window changes (has to come before keybindings)
+(when (fboundp 'winner-mode)
+        (winner-mode 1))
+
+; keybindings
+(global-set-key (kbd "DEL") 'backward-delete-char)
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "C-c <left>") 'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>") 'windmove-up)
+(global-set-key (kbd "C-c <down>") 'windmove-down)
+(global-set-key (kbd "C-c w <left>") 'winner-undo)
+(global-set-key (kbd "C-c w <right>") 'winner-redo)
+(global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-n") 'next-line)
+(global-set-key (kbd "M-p") 'previous-line)
 
 ; typing
 (show-paren-mode t)			; highlight parenthesis
 (setq show-paren-style 'parethesis)	; highlihght just parenthesis
 (setq echo-keystrokes 0.1)		; quick keystrokes
+
 (set-keyboard-coding-system nil)	; for using a Mac
 
-; modes
+; disable autosave
+(setq auto-save-default nil)		; autosave
+(setq backup-inhibited t)		; backup
+
+; hooks
 (add-hook 'lisp-mode-hook 		; CLISP
 	  (lambda ()
 	    (auto-fill-mode)
@@ -50,42 +75,27 @@
 	    (define-key c-mode-map (kbd "C-c C-M-s") 'hs-show-all)
 	    (define-key c-mode-map (kbd "C-c C-M-b") 'hs-hide-all)))
 
-; disable autosave
-(setq auto-save-default nil)		; autosave
-(setq backup-inhibited t)		; backup
-
-; keybindings
-(global-set-key (kbd "RET") 'newline-and-indent) ; indent after new line
-(global-set-key (kbd "C-c <left>") 'windmove-left)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
-(global-set-key (kbd "C-c <up>") 'windmove-up)
-(global-set-key (kbd "C-c <down>") 'windmove-down)
-(global-set-key (kbd "M-s") 'save-buffer)
-(global-set-key (kbd "M-n") 'next-line)
-(global-set-key (kbd "M-p") 'previous-line)
-
-(defun set-lisp-comments ()		; lisp comments
+;; functions used in hooks
+(defun set-lisp-comments ()
   (setq comment-start "; "
 	comment-end ""))
 
-(defun insert-space-or-newline-and-indent ()
-  (interactive)
-  (if (>= (current-column) fill-column)
-      (newline-and-indent)
-    (insert-char ? )))
-
+;; add-ons
+(add-to-list 'load-path "~/tf_conf/emacs-load")
+(require 'sr-speedbar)
 
 ;; Enable mouse support
 (unless window-system
   (require 'mouse)
   (xterm-mouse-mode t)
   (global-set-key [mouse-4] '(lambda ()
-			       (interactive)
-			       (scroll-down
-				1)))
+			      (interactive)
+			      (scroll-down
+			       1)))
   (global-set-key [mouse-5] '(lambda ()
-			       (interactive)
-			       (scroll-up
-				1)))
+			      (interactive)
+			      (scroll-up
+			       1)))
   (defun track-mouse (e))
   (setq mouse-sel-mode t))
+
