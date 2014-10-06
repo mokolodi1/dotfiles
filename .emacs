@@ -14,7 +14,10 @@
 
 ;; For undoing window changes (has to come before keybindings)
 (when (fboundp 'winner-mode)
-        (winner-mode 1))
+  (let ((winner-dont-bind-my-keys t))
+    (winner-mode 1))
+  (global-set-key (kbd "C-c w <left>") 'winner-undo)
+  (global-set-key (kbd "C-c w <right>") 'winner-redo))
 
 ; keybindings
 (global-set-key (kbd "DEL") 'backward-delete-char)
@@ -23,8 +26,6 @@
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
-(global-set-key (kbd "C-c w <left>") 'winner-undo)
-(global-set-key (kbd "C-c w <right>") 'winner-redo)
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-n") 'next-line)
 (global-set-key (kbd "M-p") 'previous-line)
@@ -74,6 +75,12 @@
 	    (define-key c-mode-map (kbd "C-c C-b") 'hs-hide-block)
 	    (define-key c-mode-map (kbd "C-c C-M-s") 'hs-show-all)
 	    (define-key c-mode-map (kbd "C-c C-M-b") 'hs-hide-all)))
+(add-hook 'winner-mode-hook
+	  (lambda ()
+	    (define-key winner-mode-map (kbd "C-c w <left>") 'winner-undo)
+	    (define-key winner-mode-map (kbd "C-c w <right>") 'winner-redo)
+	    (define-key winner-mode-map (kbd "C-c <left>") 'windmove-left)
+	    (define-key winner-mode-map (kbd "C-c <right>") 'windmove-right)))
 
 ;; functions used in hooks
 (defun set-lisp-comments ()
