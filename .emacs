@@ -29,6 +29,8 @@
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-n") 'next-line)
 (global-set-key (kbd "M-p") 'previous-line)
+(global-set-key (kbd "C-c C-c") 'comment-region)
+(global-set-key (kbd "C-c C-u") 'uncomment-region)
 
 ; typing
 (show-paren-mode t)			; highlight parenthesis
