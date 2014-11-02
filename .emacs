@@ -32,6 +32,9 @@
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-c C-u") 'uncomment-region)
 
+; C-h stuff
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "M-h") 'backward-kill-word)
 ; typing
 (show-paren-mode t)			; highlight parenthesis
 (setq show-paren-style 'parethesis)	; highlihght just parenthesis
@@ -107,4 +110,3 @@
 			       1)))
   (defun track-mouse (e))
   (setq mouse-sel-mode t))
-
