@@ -1,7 +1,7 @@
 if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
 	# assume zsh
 	#export PROMPT="%m%# " normal
-	PS1=$'\e[0;31m%m\e[0m:\e[0;36m%~\e[0m%# '
+	PS1=$'\e[0;31m%m\e[0m:\e[0;36m%~\e[0m:\e[0;32m%j\e[0m%# '
 fi
 if [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
 	# assume bash
