@@ -22,15 +22,20 @@
 ; keybindings
 (global-set-key (kbd "DEL") 'backward-delete-char)
 (global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key (kbd "C-c <left>") 'windmove-left)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
-(global-set-key (kbd "C-c <up>") 'windmove-up)
-(global-set-key (kbd "C-c <down>") 'windmove-down)
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-n") 'next-line)
 (global-set-key (kbd "M-p") 'previous-line)
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-c C-u") 'uncomment-region)
+; moving around buffers
+(global-set-key (kbd "C-c <left>") 'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>") 'windmove-up)
+(global-set-key (kbd "C-c <down>") 'windmove-down)
+(global-set-key (kbd "C-c b") 'windmove-left)
+(global-set-key (kbd "C-c f") 'windmove-right)
+(global-set-key (kbd "C-c p") 'windmove-up)
+(global-set-key (kbd "C-c n") 'windmove-down)
 
 ; C-h stuff
 (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -93,7 +98,7 @@
 	comment-end ""))
 
 ;; add-ons
-(add-to-list 'load-path "~/tf-config/emacs-load")
+(add-to-list 'load-path "~/git/tf-config/emacs-load")
 (require 'sr-speedbar)
 
 ;; Enable mouse support
