@@ -28,3 +28,4 @@ alias norminettef='norminette --CheckForbiddenSourceHeader'
 alias norminetteall='find . -name "*.c" -exec norminette {} \;'
 
 alias pyb='python -B' # don't create bytecode
+alias findinfiles='find . -type f -print0 | xargs -0 grep'
