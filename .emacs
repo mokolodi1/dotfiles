@@ -5,6 +5,7 @@
 ; simple modes
 (setq column-number-mode t)
 (setq line-number-mode t)
+(transient-mark-mode t)
 (menu-bar-mode -1)
 
 ;; general settings
