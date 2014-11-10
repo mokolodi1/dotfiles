@@ -1,7 +1,8 @@
+# sets PS1
 if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
 	# assume zsh
 	#export PROMPT="%m%# " normal
-	PS1=$'\e[0;31m%m\e[0m:\e[0;36m%~\e[0m:\e[0;32m%j\e[0m%# '
+	PS1=$'%{\e[0;31m%}%m%{\e[0m%}:%{\e[0;36m%}%~%{\e[0m%}:%{\e[0;32m%}%j%{\e[0m%}%# '
 fi
 if [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
 	# assume bash
@@ -10,10 +11,8 @@ if [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
 	# \u = username
 	# \w = ~/thingies
 	# \$ = $ or # depending on if root
-	export PS1='\[\e[0;31m\]\u\[\e[0m\]:'
-	PS1+='\[\e[0;36m\]\w\[\e[0m\]:'
-	PS1+='\[\e[0;32m\]\j\[\e[0m\]'
-	PS1+='\$ '
+	export LC_ALL=en_US.UFT-8
+	export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]:\[\e[0;32m\]\j\[\e[0m\]\$ '
 fi
 
 # aliases
