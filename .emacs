@@ -99,7 +99,7 @@
 	comment-end ""))
 
 ;; add-ons
-(add-to-list 'load-path "~/git/tf-config/emacs-load")
+(add-to-list 'load-path "~/git/tf-config/.emacs")
 (require 'sr-speedbar)
 
 ;; Enable mouse support
