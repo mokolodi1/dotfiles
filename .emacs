@@ -1,7 +1,5 @@
 ;;; This is a file that I call from my handy dandy .emacs file. 
 
-;;http://www.emacswiki.org/emacs/EmacsCrashCode
-
 ; simple modes
 (setq column-number-mode t)
 (setq line-number-mode t)
@@ -100,7 +98,7 @@
 	comment-end ""))
 
 ;; add-ons
-(add-to-list 'load-path "~/git/tf-config/.emacs")
+(add-to-list 'load-path "~/git/tf-config/emacs-load")
 (require 'sr-speedbar)
 
 ;; Enable mouse support
