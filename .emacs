@@ -1,5 +1,8 @@
 ;;; This is a file that I call from my handy dandy .emacs file. 
 
+;;(let ((git-emacs "~/git/tf-config/.emacs"))
+;;  (if (file-exists-p git-emacs) (load-file git-emacs)))
+
 ; simple modes
 (setq column-number-mode t)
 (setq line-number-mode t)
