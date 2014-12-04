@@ -26,6 +26,9 @@
 (global-set-key (kbd "M-p") 'previous-line)
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-c C-u") 'uncomment-region)
+(global-set-key (kbd "M-c") 'compile)
+;; C-c r to rename-file-and-buffer (below)
+
 ; moving around buffers
 (global-set-key (kbd "C-c <left>") 'windmove-left)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
@@ -35,7 +38,7 @@
 (global-set-key (kbd "C-c f") 'windmove-right)
 (global-set-key (kbd "C-c p") 'windmove-up)
 (global-set-key (kbd "C-c n") 'windmove-down)
-(global-set-key (kbd "M-c") 'compile)
+
 
 ; C-h stuff
 (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -115,3 +118,18 @@
 			       1)))
   (defun track-mouse (e))
   (setq mouse-sel-mode t))
+
+; http://emacsredux.com/blog/2013/05/04/rename-file-and-buffer/
+(defun rename-file-and-buffer ()
+  "Rename the current buffer and file it is visiting."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+	(if (not (and filename (file-exists-p filename)))
+		(message "Buffer is not visiting a file!")
+	  (let ((new-name (read-file-name "New name: " filename)))
+		(cond
+		 ((vc-backend filename) (vc-rename-file filename new-name))
+		 (t
+		  (rename-file filename new-name t)
+		            (set-visited-file-name new-name t t)))))))
+(global-set-key (kbd "C-c r")  'rename-file-and-buffer)
