@@ -3,11 +3,12 @@
 ;;(let ((git-emacs "~/git/tf-config/.emacs"))
 ;;  (if (file-exists-p git-emacs) (load-file git-emacs)))
 
-; simple modes
+;; simple modes
 (setq column-number-mode t)
 (setq line-number-mode t)
 (transient-mark-mode t)
 (menu-bar-mode -1)
+(global-font-lock-mode t)
 
 ;; general settings
 (setq ring-bell-function 'ignore)
@@ -42,6 +43,9 @@
 (global-set-key (kbd "C-c p") 'windmove-up)
 (global-set-key (kbd "C-c n") 'windmove-down)
 
+;; scrolling
+(global-set-key (kbd "M-p") 'scroll-down-line)
+(global-set-key (kbd "M-n") 'scroll-up-line)
 
 ; C-h stuff
 (global-set-key (kbd "C-h") 'delete-backward-char)
