@@ -20,11 +20,6 @@ alias ll='ls -lAh'
 alias l='ls -CA1'
 alias gccw="gcc -Werror -Wextra -Wall -o a"
 alias clean="find ~ -name \".DS_Store\" -depth -exec rm {} \;"
-#alias emacs='/usr/local/Cellar/emacs/24.3/bin/emacs'
 
-# 42 stuff
-alias norminettef='norminette --CheckForbiddenSourceHeader'
-alias norminetteall='find . -name "*.c" -exec norminette {} \;'
-
-alias pyb='python -B' # don't create bytecode
 alias findinfiles='find . -type f -print0 | xargs -0 grep'
+alias top='top -o cpu'
