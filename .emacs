@@ -44,8 +44,8 @@
 (global-set-key (kbd "C-c n") 'windmove-down)
 
 ;; scrolling
-(global-set-key (kbd "M-p") 'scroll-down-line)
-(global-set-key (kbd "M-n") 'scroll-up-line)
+(global-set-key (kbd "C-M-p") 'scroll-down-line)
+(global-set-key (kbd "C-M-n") 'scroll-up-line)
 
 ; C-h stuff
 (global-set-key (kbd "C-h") 'delete-backward-char)
