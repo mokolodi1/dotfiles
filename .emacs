@@ -47,9 +47,6 @@
 (global-set-key (kbd "C-M-p") 'scroll-down-line)
 (global-set-key (kbd "C-M-n") 'scroll-up-line)
 
-; C-h stuff
-(global-set-key (kbd "C-h") 'delete-backward-char)
-(global-set-key (kbd "M-h") 'backward-kill-word)
 ; typing
 (show-paren-mode t)			; highlight parenthesis
 (setq show-paren-style 'parethesis)	; highlihght just parenthesis
