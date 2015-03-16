@@ -19,7 +19,17 @@ fi
 alias ll='ls -lAh'
 alias l='ls -CA1'
 alias gccw="gcc -Werror -Wextra -Wall -o a"
-alias clean="find ~ -name \".DS_Store\" -depth -exec rm {} \;"
+
+cleanup () {
+    find $1 -name $2 -depth -exec rm {} \;
+}
+
+cleanup_all () {
+    cleanup ~/Copy/42/git/ *.o
+    cleanup ~ .DS_Store
+}
+
+alias clean=cleanup_all
 
 alias findinfiles='find . -type f -print0 | xargs -0 grep'
 alias top='top -o cpu'
