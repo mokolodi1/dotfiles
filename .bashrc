@@ -21,12 +21,12 @@ alias l='ls -CA1'
 alias gccw="gcc -Werror -Wextra -Wall -o a"
 
 cleanup () {
-    find $1 -name $2 -depth -exec rm {} \;
+	find $1 -name $2 -depth -exec rm {} \;
 }
 
 cleanup_all () {
-    cleanup ~/Copy/42/git/ *.o
-    cleanup ~ .DS_Store
+	cleanup ~ ".DS_Store"
+    cleanup ~/Copy/42/git "*.o"
 }
 
 alias clean=cleanup_all
