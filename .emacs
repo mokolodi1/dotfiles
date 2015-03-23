@@ -22,7 +22,9 @@
   (global-set-key (kbd "C-c w <left>") 'winner-undo)
   (global-set-key (kbd "C-c w <right>") 'winner-redo))
 
-; keybindings
+;; keybindings
+(global-set-key (kbd "<home>") 'move-beginning-of-line)
+(global-set-key (kbd "<end>") 'move-end-of-line)
 (global-set-key (kbd "DEL") 'backward-delete-char)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-s") 'save-buffer)
