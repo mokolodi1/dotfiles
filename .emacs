@@ -109,6 +109,7 @@
 ;; add-ons
 (add-to-list 'load-path "~/git/tf-config/emacs-load")
 (require 'sr-speedbar)
+(require 'php-mode)
 
 ;; Enable mouse support
 (unless window-system
