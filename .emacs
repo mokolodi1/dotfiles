@@ -29,12 +29,18 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-z") 'undo)
-(global-set-key (kbd "M-n") 'next-line)
-(global-set-key (kbd "M-p") 'previous-line)
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-c C-u") 'uncomment-region)
 (global-set-key (kbd "M-c") 'compile)
-;; C-c r to rename-file-and-buffer (below)
+
+(global-set-key (kbd "M-n") '(lambda ()
+							   (interactive)
+							   (dotimes (number 5 i)
+								 (next-line))))
+(global-set-key (kbd "M-p") '(lambda ()
+							   (interactive)
+							   (dotimes (number 5 i)
+								 (previous-line))))
 
 ; moving around buffers
 (global-set-key (kbd "C-c <left>") 'windmove-left)
