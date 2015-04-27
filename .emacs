@@ -114,7 +114,7 @@
 	comment-end ""))
 
 ;; add-ons
-(add-to-list 'load-path "~/git/tf-config/emacs-load")
+(add-to-list 'load-path "~/Copy/42/git/tf-config/emacs-load")
 (require 'sr-speedbar)
 (require 'php-mode)
 
