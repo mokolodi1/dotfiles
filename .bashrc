@@ -33,4 +33,3 @@ alias clean=cleanup_all
 
 alias findinfiles='find . -type f -print0 | xargs -0 grep'
 alias top='top -o cpu'
-alias subl="/Applications/Sublime\ Text\ 3.app/Contents/SharedSupport/bin/subl"
