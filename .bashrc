@@ -11,7 +11,6 @@ if [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
 	# \u = username
 	# \w = ~/thingies
 	# \$ = $ or # depending on if root
-	export LC_ALL=en_US.UFT-8
 	export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]:\[\e[0;32m\]\j\[\e[0m\]\$ '
 fi
 
@@ -32,4 +31,3 @@ cleanup_all () {
 alias clean=cleanup_all
 
 alias findinfiles='find . -type f -print0 | xargs -0 grep'
-alias top='top -o cpu'
