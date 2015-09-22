@@ -1,4 +1,4 @@
-;;; This is a file that I call from my handy dandy .emacs file. 
+;;; This is a file that I call from the handy dandy .emacs file. 
 
 ;;(let ((git-emacs "~/git/tf-config/.emacs"))
 ;;  (if (file-exists-p git-emacs) (load-file git-emacs)))
@@ -34,15 +34,15 @@
 (global-set-key (kbd "M-c") 'compile)
 
 (global-set-key (kbd "M-n") '(lambda ()
-							   (interactive)
-							   (dotimes (number 5 i)
-								 (next-line))))
+			       (interactive)
+			       (dotimes (number 5 i)
+				 (next-line))))
 (global-set-key (kbd "M-p") '(lambda ()
-							   (interactive)
-							   (dotimes (number 5 i)
-								 (previous-line))))
+			       (interactive)
+			       (dotimes (number 5 i)
+				 (previous-line))))
 
-; moving around buffers
+;; moving around buffers
 (global-set-key (kbd "C-c <left>") 'windmove-left)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <up>") 'windmove-up)
@@ -56,18 +56,18 @@
 (global-set-key (kbd "C-M-p") 'scroll-down-line)
 (global-set-key (kbd "C-M-n") 'scroll-up-line)
 
-; typing
+;; typing
 (show-paren-mode t)			; highlight parenthesis
 (setq show-paren-style 'parethesis)	; highlihght just parenthesis
 (setq echo-keystrokes 0.1)		; quick keystrokes
 
 (set-keyboard-coding-system nil)	; for using a Mac
 
-; disable autosave
+;; disable autosave
 (setq auto-save-default nil)		; autosave
 (setq backup-inhibited t)		; backup
 
-; hooks
+;; hooks
 (add-hook 'lisp-mode-hook 		; CLISP
 	  (lambda ()
 	    (auto-fill-mode)
@@ -117,6 +117,7 @@
 (add-to-list 'load-path "~/Copy/42/git/tf-config/emacs-load")
 (require 'sr-speedbar)
 (require 'php-mode)
+(require 'arduino-mode)
 
 ;; Enable mouse support
 (unless window-system
@@ -133,7 +134,7 @@
   (defun track-mouse (e))
   (setq mouse-sel-mode t))
 
-; http://emacsredux.com/blog/2013/05/04/rename-file-and-buffer/
+;; http://emacsredux.com/blog/2013/05/04/rename-file-and-buffer/
 (defun rename-file-and-buffer ()
   "Rename the current buffer and file it is visiting."
   (interactive)
