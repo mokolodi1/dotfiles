@@ -22,12 +22,15 @@ alias gccw="gcc -Werror -Wextra -Wall -o a"
 cleanup () {
 	find $1 -name $2 -depth -exec rm {} \;
 }
-
 cleanup_all () {
-	cleanup ~ ".DS_Store"
-    cleanup ~/Copy/42/git "*.o"
+    cleanup ~ ".DS_Store"
+    # other stuff here if needed
 }
-
 alias clean=cleanup_all
 
 alias findinfiles='find . -type f -print0 | xargs -0 grep'
+
+collectionexport () {
+    mongoexport --db $1 --collection $2 --out $2.mongoexport
+}
+alias collectionexport=collectionexport
