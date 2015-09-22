@@ -1,0 +1,3 @@
+'atom-workspace atom-text-editor':
+  'ctrl-c f': 'window:focus-pane-on-right'
+  'ctrl-c b': 'window:focus-pane-on-left'

@@ -1,0 +1,20 @@
+'.source.js':
+  'log with quotes':
+    'prefix': 'log'
+    'body': """console.log("$1");
+"""
+  'log a variable':
+    'prefix': 'cons'
+    'body': """console.log("$1:", $1);
+"""
+  'print if fail':
+    'prefix': 'ass'
+    'body': """console.assert($1, "$2")"""
+
+".text.html.spacebars":
+  "cons it":
+    "prefix": "cons"
+    "body": "{{print '$1 ::' $1}}"
+  "log it":
+    "prefix": "log"
+    "body": "{{print '$1'}}"
