@@ -33,4 +33,8 @@ alias findinfiles='find . -type f -print0 | xargs -0 grep'
 collectionexport () {
     mongoexport --db $1 --collection $2 --out $2.mongoexport
 }
+collectionimport () {
+    mongoimport --db $1 --collection $2 --file $2.mongoexport
+}
 alias collectionexport=collectionexport
+alias collectionimport=collectionimport
