@@ -18,6 +18,7 @@ fi
 alias ll='ls -lAh'
 alias l='ls -CA1'
 alias gccw="gcc -Werror -Wextra -Wall -o a"
+alias psall='ps -ef'
 
 cleanup () {
 	find $1 -name $2 -depth -exec rm {} \;
