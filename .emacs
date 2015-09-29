@@ -3,6 +3,9 @@
 ;;(let ((git-emacs "~/git/tf-config/.emacs"))
 ;;  (if (file-exists-p git-emacs) (load-file git-emacs)))
 
+;; generate tab stop list
+(setq tab-stop-list (number-sequence 4 120 4))
+
 ;; simple modes
 (setq column-number-mode t)
 (setq line-number-mode t)
