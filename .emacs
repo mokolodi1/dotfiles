@@ -120,7 +120,6 @@
 (add-to-list 'load-path "~/Copy/42/git/tf-config/emacs-load")
 (require 'sr-speedbar)
 (require 'php-mode)
-(require 'arduino-mode)
 
 ;; Enable mouse support
 (unless window-system
