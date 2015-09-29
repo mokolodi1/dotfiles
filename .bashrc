@@ -20,14 +20,17 @@ alias l='ls -CA1'
 alias gccw="gcc -Werror -Wextra -Wall -o a"
 alias psall='ps -ef'
 
-cleanup () {
+function zipfolder {
+    zip -r $1.zip $1
+}
+
+delete_files_in_folder () {
 	find $1 -name $2 -depth -exec rm {} \;
 }
-cleanup_all () {
-    cleanup ~ ".DS_Store"
+clean () {
+    delete_files_in_folder ~ ".DS_Store"
     # other stuff here if needed
 }
-alias clean=cleanup_all
 
 alias findinfiles='find . -type f -print0 | xargs -0 grep'
 
@@ -37,5 +40,3 @@ collectionexport () {
 collectionimport () {
     mongoimport --db $1 --collection $2 --file $2.mongoexport
 }
-alias collectionexport=collectionexport
-alias collectionimport=collectionimport
