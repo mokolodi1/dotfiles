@@ -40,5 +40,6 @@ collectionimport () {
     mongoimport --db $1 --collection $2 --file $2.mongoexport
 }
 
-# git undo-commit
+# git stuff
 git config --global alias.undo-commit 'reset --soft HEAD^'
+alias network="git log --graph --decorate --oneline"
