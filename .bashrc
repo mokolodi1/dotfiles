@@ -43,3 +43,8 @@ collectionimport () {
 # git stuff
 git config --global alias.undo-commit 'reset --soft HEAD^'
 alias network="git log --graph --decorate --oneline"
+
+
+tagit () {
+    git tag -a $1 -m $1
+}
