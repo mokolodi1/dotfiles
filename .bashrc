@@ -50,3 +50,7 @@ alias gnetwork="git log --graph --decorate --oneline"
 tagit () {
     git tag -a $1 -m $1
 }
+
+# ssh
+
+alias "su2c-dev"="ssh dtflemin@su2c-dev.ucsc.edu"
