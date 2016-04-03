@@ -45,7 +45,7 @@ git config --global user.name "Teo Fleming"
 git config --global user.email "mokolodi1@gmail.com"
 git config --global core.editor emacs
 git config --global alias.undo-commit 'reset --soft HEAD^'
-alias gitnetwork="git log --graph --decorate --oneline"
+alias gnetwork="git log --graph --decorate --oneline"
 
 tagit () {
     git tag -a $1 -m $1
