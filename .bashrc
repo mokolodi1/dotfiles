@@ -21,6 +21,12 @@ alias gccw="gcc -Werror -Wextra -Wall -o a"
 alias psall='ps -ef'
 alias findinfiles='find . -type f -print0 | xargs -0 grep'
 
+# symlink atom if it's installed
+atom_path="/Applications/Atom.app/Contents/Resources/app/atom.sh"
+if [ -f $atom_path ]; then
+    alias atom=$atom_path
+fi
+
 function zipfolder {
     zip -r $1.zip $1
 }
