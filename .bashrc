@@ -8,10 +8,10 @@ if [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
 	# assume bash
 	# PS1
 	# \[\e[<type>;<color>m\] = colors
-	# \u = username
+	# \h = hostname  (old: \u = username)
 	# \w = ~/thingies
 	# \$ = $ or # depending on if root
-	export PS1='\[\e[0;31m\]\u\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]:\[\e[0;32m\]\j\[\e[0m\]\$ '
+	export PS1='\[\e[0;31m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]:\[\e[0;32m\]\j\[\e[0m\]\$ '
 fi
 
 # aliases
@@ -54,7 +54,8 @@ tagit () {
 # color iTerm tab based on host
 if hash python2.7 2>/dev/null; then
     # dirname is the directory in which this file is
-    python2.7 $(dirname $0)/rainbow-parade.py .5 1
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    python2.7 $DIR/rainbow-parade.py .5 1
 else
     echo "python2.7 not installed... Can't color iTerm tabs based on hostname."
 fi
