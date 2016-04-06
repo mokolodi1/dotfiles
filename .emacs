@@ -117,9 +117,9 @@
 	comment-end ""))
 
 ;; add-ons
-(add-to-list 'load-path "~/work/dotfiles/emacs-load")
-(require 'sr-speedbar)
-(require 'php-mode)
+;(add-to-list 'load-path "~/work/dotfiles/emacs-load")
+;(require 'sr-speedbar)
+;(require 'php-mode)
 
 ;; Enable mouse support
 (unless window-system
