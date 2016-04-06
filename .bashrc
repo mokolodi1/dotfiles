@@ -17,9 +17,10 @@ fi
 # aliases
 alias ll='ls -lAh'
 alias l='ls -CA1'
-alias gccw="gcc -Werror -Wextra -Wall -o a"
-alias psall='ps -ef'
 alias findinfiles='find . -type f -print0 | xargs -0 grep'
+
+# ssh aliases
+alias "su2c-dev"="ssh dtflemin@su2c-dev.ucsc.edu"
 
 # symlink atom if it's installed
 atom_path="/Applications/Atom.app/Contents/Resources/app/atom.sh"
@@ -27,13 +28,6 @@ if [ -f $atom_path ]; then
     alias atom=$atom_path
 fi
 
-function zipfolder {
-    zip -r $1.zip $1
-}
-
-delete_files_in_folder () {
-	find $1 -name $2 -depth -exec rm {} \;
-}
 clean () {
     delete_files_in_folder ~ ".DS_Store"
     # other stuff here if needed
@@ -57,6 +51,9 @@ tagit () {
     git tag -a $1 -m $1
 }
 
-# ssh
-
-alias "su2c-dev"="ssh dtflemin@su2c-dev.ucsc.edu"
+# color iTerm tab based on host
+if hash python2.7 2>/dev/null; then
+    ./rainbow-parade.py .5 1
+else
+    echo "python2.7 not installed... Can't color iTerm tabs based on hostname."
+fi
