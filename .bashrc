@@ -53,7 +53,8 @@ tagit () {
 
 # color iTerm tab based on host
 if hash python2.7 2>/dev/null; then
-    ./rainbow-parade.py .5 1
+    # dirname is the directory in which this file is
+    python2.7 $(dirname $0)/rainbow-parade.py .5 1
 else
     echo "python2.7 not installed... Can't color iTerm tabs based on hostname."
 fi
