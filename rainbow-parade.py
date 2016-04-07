@@ -66,6 +66,11 @@ def rainbow_unicorn(lightness, saturation):
 
     name = socket.gethostname()
 
+    # make everything from my laptop show up as the same thing
+    if name.startswith("eduroam") or name.startswith("dhcp-") or \
+            name == "Teos-MacBook-Pro":
+        name = "Teos-MacBook-Pro"
+
     hue = get_random_by_string(name)
 
     color = colorsys.hls_to_rgb(hue, lightness, saturation)
