@@ -65,3 +65,20 @@ alias gnetwork="git log --graph --decorate --oneline"
 tagit () {
     git tag -a $1 -m $1
 }
+
+# watch
+# ex: watch "ls -l"
+watch () {
+    if [ -z $1 ]; then
+	echo 'Example: watch "ls -l"';
+	return;
+    fi
+    
+    while :;
+    do
+	clear
+	date
+	$1
+	sleep 2
+    done
+}

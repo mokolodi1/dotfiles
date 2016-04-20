@@ -31,7 +31,6 @@
 (global-set-key (kbd "DEL") 'backward-delete-char)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-s") 'save-buffer)
-(global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-c C-u") 'uncomment-region)
 (global-set-key (kbd "M-c") 'compile)
