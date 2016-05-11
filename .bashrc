@@ -1,3 +1,5 @@
+[ -z "$PS1" ] && return
+
 # sets PS1
 
 if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
