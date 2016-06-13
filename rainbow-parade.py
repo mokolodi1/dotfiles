@@ -68,7 +68,7 @@ def rainbow_unicorn(lightness, saturation):
 
     # make everything from my laptop show up as the same thing
     if name.startswith("eduroam") or name.startswith("dhcp-") or \
-            name.startswith("Teos-MacBook-Pro"):
+            name.startswith("Teos-"):
         name = "Teos-MacBook-Pro.local"
 
     hue = get_random_by_string(name)
