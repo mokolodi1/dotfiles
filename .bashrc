@@ -67,6 +67,9 @@ ghubnet () {
     url="$(git remote -v | tr " " "\t" | cut -f 2 | head -1)/network";
     open $url;
 }
+circleci () {
+    open "$(git remote -v | tr " " "\t" | cut -f 2 | head -1 | sed 's/github.com/circleci.com\/gh/')"
+}
 
 tagit () {
     git tag -a $1 -m $1
