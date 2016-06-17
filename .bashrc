@@ -63,6 +63,10 @@ git config --global user.email "mokolodi1@gmail.com" --replace-all
 git config --global core.editor emacs
 git config --global alias.undo-commit 'reset --soft HEAD^'
 alias gnetwork="git log --graph --decorate --oneline"
+ghubnet () {
+    url="$(git remote -v | tr " " "\t" | cut -f 2 | head -1)/network";
+    open $url;
+}
 
 tagit () {
     git tag -a $1 -m $1
