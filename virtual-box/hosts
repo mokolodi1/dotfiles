@@ -1,4 +1,1 @@
-[all:vars]
-
-[vms]
-128.114.59.216
+localhost ansible_connection=local

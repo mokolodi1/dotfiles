@@ -4,7 +4,7 @@
 # ansible-playbook playbook.yml -i hosts -u ubuntu
 ---
 
-- hosts: vms
+- hosts: all
   become_method: sudo
   remote_user: root
   gather_facts: no
@@ -55,10 +55,10 @@
       become_method: sudo
 
     - name: Customize .bashrc
-      template: src=templates/.bashrc dest=~/.bashrc
+      template: src=../tilde_bashrc dest=~/.bashrc
 
     - name: Customize .tmux.conf
-      template: src=templates/.tmux.conf dest=~/.tmux.conf
+      template: src=../tilde_tmux.conf dest=~/.tmux.conf
 
     - name: Install emacs
       apt: pkg=emacs24-nox
