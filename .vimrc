@@ -1,6 +1,12 @@
 set nocompatible
 filetype off
 
+" map jk to ESC
+:imap jk <Esc>
+
+" enable mouse mode
+set mouse=a
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load Plugins via https://github.com/gmarik/Vundle.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
