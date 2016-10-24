@@ -111,6 +111,7 @@ git config --global user.name "Teo Fleming" --replace-all
 git config --global user.email "mokolodi1@gmail.com" --replace-all
 git config --global core.editor emacs
 git config --global alias.undo-commit 'reset --soft HEAD^'
+git config --global credential.helper "cache --timeout=7884000"
 alias gnetwork="git log --graph --decorate --oneline"
 
 # open the GitHub network page
