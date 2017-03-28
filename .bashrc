@@ -88,7 +88,7 @@ alias "su2c-dev"="ssh dtflemin@su2c-dev.ucsc.edu"
 # ls after on every cd
 if [ ! -z "$PS1" ]; then # only for interactive prompts
     function cd {
-        builtin cd "$@" && l
+        builtin cd "$@" && ll
     }
 fi
 
